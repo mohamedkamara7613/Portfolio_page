@@ -2,10 +2,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { scroller } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useBodyScrollLock } from "../hooks/useBodyScrollLock";
 
 const Navbar = ({ projects, contacts }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
+
+  useBodyScrollLock(isMenuOpen);
 
   // Fermer le menu en cliquant à l'extérieur
   useEffect(() => {
