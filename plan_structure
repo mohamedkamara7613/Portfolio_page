@@ -1,0 +1,164 @@
+structure de la page (en une seule page). <--- Créer à partir de tree du repo
+    ---> Ce n'est pas tous les projets du repo qui vont apparaitres
+
+    Navigation bar : 
+        - Home (intro)
+        - Projets
+            - listes des projets selectionnés
+        - Contacts 
+            - Linkdin
+            - Github
+            - Youtube
+            - Insta
+            - Mail
+    
+    Un projet:
+        - Description ou pas
+        - illustration : (photos et/ou videos)
+        - Techno et langages utilisés
+        - Lien direct vers le code sur github
+
+    import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+import ProjectCard from "./components/ProjectCard";
+import { projects } from "./data/projects";
+
+function App() {
+  return (
+    <div className="min-h-screen p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center">Mes Projets</h1>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((p, i) => <ProjectCard key={i} {...p} />)}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+<Navbar />
+      <Hero />
+      <ProjectsSection />
+      <ContactSection />
+
+Fichier main.jsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+
+Fichier index.html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+
+## DESIGN
+
+Mhd kmr, [19/10/2025 05:50]
+React Bits - Scroll Stack
+https://reactbits.dev/
+
+Mhd kmr, [19/10/2025 05:51]
+React Bits - Magic Bento
+https://reactbits.dev/
+
+Mhd kmr, [19/10/2025 05:53]
+React Bits - Circular Gallery
+https://reactbits.dev/
+
+Mhd kmr, [19/10/2025 05:53]
+React Bits - Card Nav
+https://reactbits.dev/
+
+Mhd kmr, [19/10/2025 05:57]
+React Bits - Chroma Grid
+https://reactbits.dev/
+
+Mhd kmr, [19/10/2025 05:59]
+React Bits - Gooey Nav
+https://reactbits.dev/
+
+Mhd kmr, [19/10/2025 06:01]
+React Bits - Spotlight Card
+https://reactbits.dev/
+
+React Bits - Lanyard
+https://reactbits.dev/
+
+https://www.reactbits.dev/text-animations/gradient-text
+
+https://www.reactbits.dev/text-animations/shiny-text
+
+https://www.reactbits.dev/text-animations/decrypted-text
+
+https://www.reactbits.dev/text-animations/ascii-text
+
+https://www.reactbits.dev/animations/splash-cursor
+
+backgrounds:
+
+https://www.reactbits.dev/backgrounds/dark-veil
+
+https://www.reactbits.dev/backgrounds/pixel-blast
+
+https://www.reactbits.dev/backgrounds/letter-glitch
+
+
+
+
+--------------------------------------------------------------------
+{/* Version geek avancée - CHOISIR CETTE VERSION OU LA PRÉCÉDENTE */}
+<div className="flex-shrink-0 flex items-center">
+  <div className="font-mono text-lg font-bold cursor-pointer group">
+    <span className="text-cyan-400 group-hover:text-cyan-300 transition-colors">root@portfolio</span>
+    <span className="text-gray-300">:</span>
+    <span className="text-purple-400 group-hover:text-purple-300 transition-colors">~</span>
+    <span className="text-gray-300">$ </span>
+    <span className="text-green-400 group-hover:text-green-300 transition-colors typing-animation">
+      welcome_mouhamed
+    </span>
+    <span className="text-green-400 animate-pulse">_</span>
+  </div>
+</div>
+
+----------------------------------------------------------------------------------
+
+{/* Version finale - celle-ci devrait bien fonctionner */}
+<div className="flex-shrink-0 flex items-center">
+  <div className="font-mono text-base sm:text-lg font-bold cursor-pointer group bg-gray-900/80 px-3 sm:px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-500 hover:shadow-[0_0_20px_#22d3ee40] backdrop-blur-sm">
+    <span className="text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 drop-shadow-[0_0_6px_#22d3ee]">
+      root@portfolio
+    </span>
+    <span className="text-gray-400">:</span>
+    <span className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300 drop-shadow-[0_0_6px_#c084fc]">
+      ~
+    </span>
+    <span className="text-gray-400">$ </span>
+    <span className="text-green-400 group-hover:text-green-300 transition-colors duration-300 drop-shadow-[0_0_6px_#4ade80] overflow-hidden whitespace-nowrap border-r-2 border-green-400 animate-typing">
+      welcome_mouhamed
+    </span>
+    <span className="text-green-400 animate-pulse drop-shadow-[0_0_6px_#4ade80]">_</span>
+  </div>
+</div>

@@ -1,20 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-import ProjectCard from "./components/ProjectCard";
+import React from "react";
+import { Element } from "react-scroll";
+import SplashCursor from "@/components/SplashCursor";
+
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import ProjectsSection from "./components/ProjectsSection";
+import ContactSection from "./components/ContactSection";
 import { projects } from "./data/projects";
+import { contacts } from "./data/contacts";
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">Mes Projets</h1>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p, i) => <ProjectCard key={i} {...p} />)}
-      </div>
+    <div>
+      <SplashCursor />
+      <Navbar projects={projects} contacts={contacts} />
+
+      <Element name="hero-section">
+        <Hero />
+      </Element>
+
+      <Element name="projects-section">
+        <ProjectsSection projects={projects} />
+      </Element>
+
+      <Element name="contacts-section">
+        <ContactSection contacts={contacts} />
+      </Element>
     </div>
   );
 }
-
-export default App;

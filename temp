@@ -1,0 +1,17 @@
+
+Voici un extrait de fichier contacts.js
+export const contacts = [
+  {
+    id: 1,
+    name: "GitHub",
+    url: "https://github.com",
+    icon: "./src/assets/react.svg",
+  },
+  {
+    id: 2,
+    name: "LinkedIn",
+    url: "https://www.linkedin.com",
+    icon: "./src/assets/react.svg",
+  },
+
+  Je developpe une page portfolio que je deploi sur github page, donc j'aimerai eviter de stocker des images comme actuellement, je pense les icones peuves directements etre integré online ?
