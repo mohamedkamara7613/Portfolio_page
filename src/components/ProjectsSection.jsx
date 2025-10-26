@@ -57,34 +57,35 @@ export default function ProjectsSection({ projects }) {
 
         {/* Liste des projets */}
         <div className="px-6">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedTech || 'all'}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col gap-16"
-            >
-              {filteredProjects.map((project, index) => (
-                <Element key={project.id} name={`project-${project.id}`}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ 
-                      delay: index * 0.1, 
-                      duration: 0.6,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                    viewport={{ once: true, margin: "-50px" }}
-                  >
-                    <ProjectCard {...project} index={index} />
-                  </motion.div>
-                </Element>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+         <motion.div
+  key={selectedTech || 'all'} // Ce key force la ré-animation
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }}
+  className="flex flex-col gap-16"
+>
+  {filteredProjects.map((project, index) => (
+    <Element key={project.id} name={`project-${project.id}`}>
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 30 },
+          visible: { opacity: 1, y: 0 }
+        }}
+        transition={{ duration: 0.5 }}
+      >
+        <ProjectCard {...project} index={index} />
+      </motion.div>
+    </Element>
+  ))}
+</motion.div>
 
           {/* Message si aucun projet */}
           {filteredProjects.length === 0 && (

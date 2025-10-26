@@ -218,7 +218,7 @@ button:focus-visible {
     animation: var(--animate-typing);
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #4ade80; /* curseur */
+    /*border-right: 2px solid #4ade80; /* curseur */
   }
   .animate-shimmer {
   background: linear-gradient(
