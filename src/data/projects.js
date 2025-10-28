@@ -8,9 +8,7 @@ export const projects = [
       {
         type: "video",
         url: "https://www.youtube.com/embed/6K3uYd2GtoY?si=PQmcFqwxj3Itv1wd",
-      },
-      { type: "image", url: "assets/profile1.jpg" },
-      { type: "image", url: "assets/profile2.png" },
+      }
     ],
     technologies: ["Python", "Pygame"],
     repoUrl:
