@@ -2,24 +2,25 @@ import { useState } from "react";
 import { Element } from "react-scroll";
 import TechFilter from "./TechFilter";
 import ProjectCard from "./ProjectCard";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function ProjectsSection({ projects }) {
   const [selectedTech, setSelectedTech] = useState(null);
 
   const filteredProjects = selectedTech
-    ? projects.filter(project =>
-        project.technologies.includes(selectedTech)
-      )
+    ? projects.filter((project) => project.technologies.includes(selectedTech))
     : projects;
 
   return (
-    <section id="projects" className="relative w-full py-20 bg-gray-900 overflow-hidden">
-    {/* Effets de fond cyber PLUS SOMBRES */}
-    <div className="absolute inset-0 opacity-5">
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-400 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-cyan-400 rounded-full blur-3xl animate-pulse delay-1000" />
-    </div>
+    <section
+      id="projects"
+      className="relative w-full py-20 bg-gray-900 overflow-hidden"
+    >
+      {/* Effets de fond cyber */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-400 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-cyan-400 rounded-full blur-3xl animate-pulse delay-1000" />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* En-tête style terminal */}
@@ -37,7 +38,8 @@ export default function ProjectsSection({ projects }) {
             <span className="text-green-400 animate-pulse">_</span>
           </div>
           <p className="text-gray-400 font-mono text-lg">
-            // {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''} found
+            // {filteredProjects.length} project
+            {filteredProjects.length !== 1 ? "s" : ""} found
             {selectedTech && ` • filter: ${selectedTech}`}
           </p>
         </motion.div>
@@ -49,43 +51,40 @@ export default function ProjectsSection({ projects }) {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="mb-12 px-6"
         >
-          <TechFilter 
-            projects={projects} 
-            onFilterChange={setSelectedTech} 
-          />
+          <TechFilter projects={projects} onFilterChange={setSelectedTech} />
         </motion.div>
 
         {/* Liste des projets */}
         <div className="px-6">
-         <motion.div
-  key={selectedTech || 'all'} // Ce key force la ré-animation
-  initial="hidden"
-  animate="visible"
-  variants={{
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }}
-  className="flex flex-col gap-16"
->
-  {filteredProjects.map((project, index) => (
-    <Element key={project.id} name={project.id}>
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 30 },
-          visible: { opacity: 1, y: 0 }
-        }}
-        transition={{ duration: 0.5 }}
-      >
-        <ProjectCard {...project} index={index} />
-      </motion.div>
-    </Element>
-  ))}
-</motion.div>
+          <motion.div
+            key={selectedTech || "all"} 
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            className="flex flex-col gap-16"
+          >
+            {filteredProjects.map((project, index) => (
+              <Element key={project.id} name={project.id}>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <ProjectCard {...project} index={index} />
+                </motion.div>
+              </Element>
+            ))}
+          </motion.div>
 
           {/* Message si aucun projet */}
           {filteredProjects.length === 0 && (

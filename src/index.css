@@ -1,5 +1,4 @@
-
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -18,7 +17,7 @@ html {
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  font-family: 'outfit';
+  font-family: "outfit";
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -204,13 +203,22 @@ button:focus-visible {
     --animate-typing: typing 3s steps(20, end), blink 1s step-end infinite;
     --animate-shimmer: shimmer 3s infinite linear;
     @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
     }
 
     @keyframes blink {
-      0%, 100% { border-color: transparent; }
-      50% { border-color: #4ade80; }
+      0%,
+      100% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #4ade80;
+      }
     }
   }
 
@@ -221,14 +229,13 @@ button:focus-visible {
     /*border-right: 2px solid #4ade80; /* curseur */
   }
   .animate-shimmer {
-  background: linear-gradient(
-    45deg,
-    transparent 40%,
-    rgb(148 163 184 / 0.1) 50%,
-    transparent 60%
-  );
-  background-size: 200% 200%;
-  animation: var(--animate-shimmer);
+    background: linear-gradient(
+      45deg,
+      transparent 40%,
+      rgb(148 163 184 / 0.1) 50%,
+      transparent 60%
+    );
+    background-size: 200% 200%;
+    animation: var(--animate-shimmer);
   }
-
 }

@@ -8,12 +8,12 @@ export const contacts = [
   {
     id: 2,
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/mohamedkamara7613", 
+    url: "https://www.linkedin.com/in/mohamedkamara7613",
     iconName: "linkedin",
   },
   {
     id: 3,
-    name: "Youtube", 
+    name: "Youtube",
     url: "https://www.youtube.com/channel/UCqM_lDP4BhF7KArANYota6w",
     iconName: "youtube",
   },
@@ -22,5 +22,5 @@ export const contacts = [
     name: "Email",
     url: "mailto:kamarainsarouen@gmail.com",
     iconName: "envelope",
-  }
+  },
 ];

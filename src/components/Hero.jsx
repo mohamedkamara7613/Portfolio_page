@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="hero-section" className="relative min-h-screen flex flex-col items-center justify-center text-center bg-gray-900 overflow-hidden">
+    <section
+      id="hero-section"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center bg-gray-900 overflow-hidden"
+    >
       {/* LetterGlitch en background avec overlay */}
       <div className="absolute inset-0 z-0">
         <LetterGlitch
@@ -14,8 +17,8 @@ export default function Hero() {
         />
         {/* Overlay sombre pour mieux lire le texte */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-purple-900/30 to-cyan-900/20 backdrop-blur-[1px]" />
-        
-        {/* Effets de particules/lumières cyber */}
+
+        {/* Effets de particules cyber */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-400 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-400 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -36,7 +39,9 @@ export default function Hero() {
           <span className="text-gray-600">:</span>
           <span className="text-purple-400">~</span>
           <span className="text-gray-600">$ </span>
-          <span className="text-green-400 animate-typing">welcome_sequence_init</span>
+          <span className="text-green-400 animate-typing">
+            welcome_sequence_init
+          </span>
           <span className="text-green-400 animate-pulse">_</span>
         </motion.div>
 
@@ -49,7 +54,7 @@ export default function Hero() {
         >
           <span className="text-cyan-400">&gt;_ </span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 drop-shadow-[0_0_10px_#22d3ee80]">
-            Mouhamed
+            Mohamed
           </span>
           <motion.span
             animate={{ opacity: [1, 0, 1] }}
@@ -69,11 +74,36 @@ export default function Hero() {
         >
           <div className="font-mono text-xl text-gray-300 mb-2">
             <span className="text-cyan-400">[</span>
-            <span className="text-purple-400 mx-2">AI Engineer</span>
+            <span className="text-purple-400 mx-2">AI</span>
+            <span className="text-cyan-400">]</span>
+            <span className="text-gray-600 mx-3">|</span>
+
+            <span className="text-cyan-400">[</span>
+            <span className="text-green-400 mx-2">Computer Vision</span>
+            <span className="text-cyan-400">]</span>
+            <span className="text-gray-600 mx-3">|</span>
+
+            <span className="text-cyan-400">[</span>
+            <span className="text-purple-400 mx-2">Machine Learning</span>
+            <span className="text-cyan-400">]</span>
+            <span className="text-gray-600 mx-3">|</span>
+
+            <span className="text-cyan-400">[</span>
+            <span className="text-green-400 mx-2">Deep Learning</span>
+            <span className="text-cyan-400">]</span>
+            <span className="text-gray-600 mx-3">|</span>
+
+            <span className="text-cyan-400">[</span>
+            <span className="text-purple-400 mx-2">Ethical Hacking</span>
+            <span className="text-cyan-400">]</span>
+            <span className="text-gray-600 mx-3">|</span>
+
+            <span className="text-cyan-400">[</span>
+            <span className="text-green-400 mx-2">Reverse Engineering</span>
             <span className="text-cyan-400">]</span>
             <span className="text-gray-600 mx-3">|</span>
             <span className="text-cyan-400">[</span>
-            <span className="text-green-400 mx-2">Computer Vision</span>
+            <span className="text-green-400 mx-2">Embedded Systems</span>
             <span className="text-cyan-400">]</span>
           </div>
         </motion.div>
@@ -86,10 +116,10 @@ export default function Hero() {
           className="text-gray-400 max-w-2xl mx-auto mb-12 font-mono text-lg leading-relaxed"
         >
           <span className="text-cyan-400">// </span>
-          Passionné par la vision par ordinateur, l'IA et le développement d'outils innovants.
+          Ceci est juste un coin où je range mes bricolages numériques.
           <br />
           <span className="text-cyan-400">// </span>
-          Explorez mes projets les plus marquants dans l'univers du numérique.
+          Explorez mes petits projets, nés d’expériences improvisées.
         </motion.p>
 
         {/* Indicateur de statut */}
@@ -101,15 +131,19 @@ export default function Hero() {
         >
           <div className="flex items-center space-x-2">
             <motion.div
-              animate={{ 
-                backgroundColor: ['#4ade80', '#22d3ee', '#4ade80'],
-                boxShadow: ['0 0 10px #4ade80', '0 0 15px #22d3ee', '0 0 10px #4ade80']
+              animate={{
+                backgroundColor: ["#4ade80", "#22d3ee", "#4ade80"],
+                boxShadow: [
+                  "0 0 10px #4ade80",
+                  "0 0 15px #22d3ee",
+                  "0 0 10px #4ade80",
+                ],
               }}
               transition={{ duration: 2, repeat: Infinity }}
               className="w-2 h-2 rounded-full"
             />
             <span className="text-gray-400">status:</span>
-            <span className="text-green-400">available_for_collaboration</span>
+            <span className="text-green-400">compiling_social_skills...</span>
           </div>
         </motion.div>
 
