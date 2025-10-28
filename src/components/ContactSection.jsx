@@ -1,67 +1,70 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ContactIcon } from './ContactIcon';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ContactIcon } from "./ContactIcon";
 
 export default function ContactSection({ contacts }) {
   return (
-<section id="contacts-section" className="relative min-h-screen bg-gray-900 py-20 overflow-hidden">
-  {/* Effets de fond cyber PLUS SOMBRES */}
-  <div className="absolute inset-0 opacity-5">
-    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-400 rounded-full blur-3xl animate-pulse" />
-    <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-400 rounded-full blur-3xl animate-pulse delay-1000" />
-  </div>
+    <section
+      id="contacts-section"
+      className="relative min-h-screen bg-gray-900 py-20 overflow-hidden"
+    >
+      {/* Effets de fond cyber*/}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-400 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-400 rounded-full blur-3xl animate-pulse delay-1000" />
+      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Titre style terminal */}
         <motion.div
-  initial={{ opacity: 0, y: -30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  className="text-center mb-16"
->
-  <div className="flex flex-col items-center space-y-6">
-    {/* Photo de profil avec effets cyber */}
-    <motion.div
-      initial={{ scale: 0, rotate: -180 }}
-      whileInView={{ scale: 1, rotate: 0 }}
-      transition={{ duration: 1, type: "spring" }}
-      className="relative group/avatar"
-    >
-      <img
-        src="assets/profile2.png"
-        alt="Mouhamed"
-        className="w-24 h-24 rounded-full border-2 border-cyan-400/60 object-cover shadow-[0_0_30px_#22d3ee60] relative z-10"
-      />
-      {/* Effet de halo pulsant */}
-      <div className="absolute inset-0 rounded-full bg-cyan-400/20 animate-ping opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-1000" />
-      {/* Points de connexion */}
-      <div className="absolute -top-1 -left-1 w-4 h-4 rounded-full bg-cyan-400 drop-shadow-[0_0_10px_#22d3ee] opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300" />
-      <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-purple-400 drop-shadow-[0_0_10px_#c084fc] opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300" />
-    </motion.div>
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <div className="flex flex-col items-center space-y-6">
+            {/* Photo de profil avec effets cyber */}
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 1, type: "spring" }}
+              className="relative group/avatar"
+            >
+              <img
+                src="assets/1.jpg"
+                alt="Mohamed kamara"
+                className="w-24 h-24 rounded-full border-2 border-cyan-400/60 object-cover shadow-[0_0_30px_#22d3ee60] relative z-10"
+              />
+              {/* Effet de halo pulsant */}
+              <div className="absolute inset-0 rounded-full bg-cyan-400/20 animate-ping opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-1000" />
+              {/* Points de connexion */}
+              <div className="absolute -top-1 -left-1 w-4 h-4 rounded-full bg-cyan-400 drop-shadow-[0_0_10px_#22d3ee] opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300" />
+              <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-purple-400 drop-shadow-[0_0_10px_#c084fc] opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300" />
+            </motion.div>
 
-    {/* Texte terminal */}
-    <div className="font-mono text-4xl font-bold">
-      <span className="text-cyan-400">$ </span>
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-        contact_me
-      </span>
-      <span className="text-green-400 animate-pulse">_</span>
-    </div>
+            {/* Texte terminal */}
+            <div className="font-mono text-4xl font-bold">
+              <span className="text-cyan-400">$ </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+                contact_me
+              </span>
+              <span className="text-green-400 animate-pulse">_</span>
+            </div>
 
-    {/* Sous-titre avec nom */}
-    <motion.p
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 0.8 }}
-      className="text-gray-400 font-mono text-lg flex items-center space-x-2"
-    >
-      <span className="text-cyan-400">//</span>
-      <span>Hey, je suis</span>
-      <span className="text-cyan-400 font-bold">Mouhamed</span>
-      <span>- Développeur passionné</span>
-    </motion.p>
-  </div>
-</motion.div>
+            {/* Sous-titre avec nom */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-gray-400 font-mono text-lg flex items-center space-x-2"
+            >
+              <span className="text-cyan-400">//</span>
+              <span>Hey, I am</span>
+              <span className="text-cyan-400 font-bold">Mohamed kamara</span>
+              <span>- Computer engineering student</span>
+            </motion.p>
+          </div>
+        </motion.div>
 
         {/* Grille des contacts */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -78,10 +81,12 @@ export default function ContactSection({ contacts }) {
           className="text-center mt-16 font-mono text-gray-500"
         >
           <div className="font-mono text-2xl border-t border-gray-700 pt-6">
-            <p className=" font-bold mb-4 text-green-400 group-hover:text-green-300 transition-colors duration-300 drop-shadow-[0_0_6px_#4ade80] 
-                              ">
-            // Connect with me across the digital realm
-          </p>
+            <p
+              className=" font-bold mb-4 text-green-400 group-hover:text-green-300 transition-colors duration-300 drop-shadow-[0_0_6px_#4ade80] 
+                              "
+            >
+              // Connect with me across the digital realm
+            </p>
             <span className="text-cyan-400">~$ </span>
             <span className=" text-green-400">./ready_to_collaborate</span>
             <span className="text-cyan-400 animate-pulse">_</span>
@@ -103,35 +108,35 @@ const ContactCard = ({ contact, index }) => {
       rel="noopener noreferrer"
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      whileHover={{ 
-        scale: 1.05, 
+      whileHover={{
+        scale: 1.05,
         y: -5,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       }}
-      transition={{ 
-        delay: index * 0.2, 
+      transition={{
+        delay: index * 0.2,
         duration: 0.6,
         type: "spring",
-        stiffness: 100
+        stiffness: 100,
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="relative block rounded-2xl p-6 cursor-pointer border-2 backdrop-blur-lg overflow-hidden group"
       style={{
-        backgroundColor: 'rgba(30, 41, 59, 0.8)',
-        borderColor: 'rgba(148, 163, 184, 0.2)',
+        backgroundColor: "rgba(30, 41, 59, 0.8)",
+        borderColor: "rgba(148, 163, 184, 0.2)",
       }}
     >
       {/* Effet de bordure animée */}
-      <div 
+      <div
         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
           background: `linear-gradient(45deg, transparent 40%, rgba(34, 211, 238, 0.2) 50%, transparent 60%)`,
-          backgroundSize: '200% 200%',
-          animation: 'shimmer 3s infinite linear'
+          backgroundSize: "200% 200%",
+          animation: "shimmer 3s infinite linear",
         }}
       />
-      
+
       {/* Points de connexion cyber */}
       <div className="absolute -top-1 -left-1 w-3 h-3 rounded-full bg-cyan-400 drop-shadow-[0_0_6px_#22d3ee]" />
       <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-purple-400 drop-shadow-[0_0_6px_#c084fc]" />
@@ -147,14 +152,14 @@ const ContactCard = ({ contact, index }) => {
             transition={{ duration: 0.3 }}
             className="w-12 h-12 flex items-center justify-center rounded-lg bg-gray-800/50 border border-cyan-400/30 mr-4"
           >
-            <ContactIcon 
-              name={contact.iconName} 
-              className="w-6 h-6 text-cyan-400 filter drop-shadow-[0_0_4px_#22d3ee]" 
+            <ContactIcon
+              name={contact.iconName}
+              className="w-6 h-6 text-cyan-400 filter drop-shadow-[0_0_4px_#22d3ee]"
             />
           </motion.div>
-          
+
           <div>
-            <motion.h3 
+            <motion.h3
               className="font-mono font-bold text-lg text-cyan-400"
               whileHover={{ x: 3 }}
             >
@@ -165,7 +170,9 @@ const ContactCard = ({ contact, index }) => {
               animate={{ opacity: isHovered ? 1 : 0.7 }}
               className="text-gray-400 text-sm font-mono"
             >
-               {contact.url.startsWith('mailto:') ? contact.url.replace('mailto:', '') : "click_to_connect"}
+              {contact.url.startsWith("mailto:")
+                ? contact.url.replace("mailto:", "")
+                : "click_to_connect"}
             </motion.div>
           </div>
         </div>
@@ -174,17 +181,17 @@ const ContactCard = ({ contact, index }) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <motion.div
-              animate={{ 
-                backgroundColor: isHovered ? '#4ade80' : '#22d3ee',
-                scale: isHovered ? 1.2 : 1
+              animate={{
+                backgroundColor: isHovered ? "#4ade80" : "#22d3ee",
+                scale: isHovered ? 1.2 : 1,
               }}
               className="w-2 h-2 rounded-full mr-2"
             />
             <span className="text-gray-400 text-sm font-mono">
-              {isHovered ? 'online' : 'active'}
+              {isHovered ? "online" : "active"}
             </span>
           </div>
-          
+
           <motion.span
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: isHovered ? 1 : 0, x: 0 }}

@@ -5,7 +5,8 @@ import {
   FaEnvelope,
   FaGlobe,
   FaDiscord,
-  FaWhatsapp 
+  FaWhatsapp,
+  FaYoutube 
 } from 'react-icons/fa';
 
 const iconMap = {
@@ -15,7 +16,8 @@ const iconMap = {
   envelope: FaEnvelope,
   globe: FaGlobe,
   discord: FaDiscord,
-  whatsapp: FaWhatsapp
+  whatsapp: FaWhatsapp,
+  youtube: FaYoutube
 };
 
 export const ContactIcon = ({ name, className = "w-6 h-6" }) => {
