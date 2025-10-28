@@ -112,14 +112,14 @@ const Navbar = ({ projects, contacts }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Nom logo */}
-          <div className="flex-shrink-0 flex items-center space-x-3">
+          <div className="flex-shrink-0 flex items-center space-x-2">
             {/* Photo de profil avec effet scan lines */}
             <div className="relative group/avatar">
               <motion.img
                 whileHover={{ scale: 1.08 }}
                 src="assets/profile2.png"
                 alt="Profile"
-                className="w-14 h-14 rounded-full border-2 border-cyan-400/60 object-cover shadow-[0_0_20px_#22d3ee50] relative z-10"
+                className="w-13 h-13 rounded-full border-2 border-cyan-400/60 object-cover shadow-[0_0_20px_#22d3ee50] relative z-10"
               />
               {/* Effet de scan lines */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-b from-cyan-400/10 to-transparent opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-500 z-20" />
