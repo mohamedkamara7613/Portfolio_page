@@ -30,8 +30,17 @@ const Navbar = ({ projects, contacts }) => {
       bgColor: '#0A1128',
       textColor: '#E2E8F0',
       onClick: () => { 
-      scroller.scrollTo('hero-section', { smooth: true, duration: 600, offset: -80 });
-      setIsMenuOpen(false);
+      // Scroll vers le haut très rapide d'abord
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          // Puis scroll vers l'élément
+          setTimeout(() => {
+            scroller.scrollTo('hero-section', { 
+              smooth: true, 
+              duration: 600, 
+              offset: -80 
+            });
+          }, 100);
+          setIsMenuOpen(false);
     },
       links: []
     },
@@ -41,8 +50,17 @@ const Navbar = ({ projects, contacts }) => {
       bgColor: '#1E293B',
       textColor: '#E2E8F0',
       onClick: () => { 
-      scroller.scrollTo('projects-section', { smooth: true, duration: 600, offset: -80 });
-      setIsMenuOpen(false);
+      // Scroll vers le haut très rapide d'abord
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          // Puis scroll vers l'élément
+          setTimeout(() => {
+            scroller.scrollTo('projects-section', { 
+              smooth: true, 
+              duration: 600, 
+              offset: -80 
+            });
+          }, 100);
+          setIsMenuOpen(false);
     },
       links: projects.map(project => ({
         label: project.title,
@@ -56,7 +74,8 @@ const Navbar = ({ projects, contacts }) => {
               duration: 600, 
               offset: -80 
             });
-    }, 100);setIsMenuOpen(false);
+          }, 100);
+          setIsMenuOpen(false);
         }
       }))
     },
@@ -66,8 +85,17 @@ const Navbar = ({ projects, contacts }) => {
       bgColor: '#334155',
       textColor: '#E2E8F0',
       onClick: () => { 
-      scroller.scrollTo('contacts-section', { smooth: true, duration: 600, offset: -80 });
-      setIsMenuOpen(false);
+        // Scroll vers le haut très rapide d'abord
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          // Puis scroll vers l'élément
+          setTimeout(() => {
+            scroller.scrollTo('contacts-section', { 
+              smooth: true, 
+              duration: 600, 
+              offset: -80 
+            });
+          }, 100);
+          setIsMenuOpen(false);
     },
       links: contacts.map(contact => ({
         label: contact.name,
@@ -84,7 +112,19 @@ const Navbar = ({ projects, contacts }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
             {/* Nom logo */}
-            <div className="flex-shrink-0 flex items-center">
+            <div className="flex-shrink-0 flex items-center space-x-3">
+            {/* Photo de profil */}
+              <div className="relative">
+                <motion.img
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  transition={{ duration: 0.3 }}
+                  src="assets/profile2.png" 
+                  alt="Profile"
+                  className="w-12 h-12 rounded-full border-2 border-cyan-400/50 object-cover shadow-[0_0_15px_#22d3ee40]"
+                />
+                {/* Point de statut en ligne */}
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-gray-900 shadow-[0_0_8px_#4ade80] animate-pulse" />
+              </div>
               <div className="font-mono text-base sm:text-lg font-bold cursor-pointer group 
                               bg-gray-900/80 px-3 sm:px-4 py-2 rounded-lg border border-cyan-500/30 
                               hover:border-cyan-400/50 transition-all duration-500 hover:shadow-[0_0_20px_#22d3ee40] 
