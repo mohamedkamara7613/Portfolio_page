@@ -47,10 +47,16 @@ const Navbar = ({ projects, contacts }) => {
       links: projects.map(project => ({
         label: project.title,
         onClick: () => {
-          console.log('Scrolling to:', project.id); // ← Debug
-    console.log('All project IDs:', projects.map(p => p.id)); // ← Debug
-          scroller.scrollTo(project.id, { smooth: true, duration: 600, offset: -80 });
-          setIsMenuOpen(false);
+          // Scroll vers le haut très rapide d'abord
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          // Puis scroll vers l'élément
+          setTimeout(() => {
+            scroller.scrollTo(project.id, { 
+              smooth: true, 
+              duration: 600, 
+              offset: -80 
+            });
+    }, 100);setIsMenuOpen(false);
         }
       }))
     },
