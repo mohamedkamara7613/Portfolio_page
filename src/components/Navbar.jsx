@@ -113,18 +113,24 @@ const Navbar = ({ projects, contacts }) => {
         <div className="flex justify-between items-center h-16">
             {/* Nom logo */}
             <div className="flex-shrink-0 flex items-center space-x-3">
-            {/* Photo de profil */}
-              <div className="relative">
+              {/* Photo de profil avec effet scan lines */}
+              <div className="relative group/avatar">
                 <motion.img
-                  whileHover={{ scale: 1.05, rotate: 2 }}
-                  transition={{ duration: 0.3 }}
-                  src="assets/profile2.png" 
+                  whileHover={{ scale: 1.08 }}
+                  src="assets/profile2.png"
                   alt="Profile"
-                  className="w-12 h-12 rounded-full border-2 border-cyan-400/50 object-cover shadow-[0_0_15px_#22d3ee40]"
+                  className="w-14 h-14 rounded-full border-2 border-cyan-400/60 object-cover shadow-[0_0_20px_#22d3ee50] relative z-10"
                 />
+                {/* Effet de scan lines */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-cyan-400/10 to-transparent opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-500 z-20" />
+                {/* Bordure animée */}
+                <div className="absolute inset-0 rounded-full border-2 border-cyan-400/30 animate-pulse opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300" />
                 {/* Point de statut en ligne */}
                 <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-gray-900 shadow-[0_0_8px_#4ade80] animate-pulse" />
               </div>
+              
+
+              {/* Nom stylé */}
               <div className="font-mono text-base sm:text-lg font-bold cursor-pointer group 
                               bg-gray-900/80 px-3 sm:px-4 py-2 rounded-lg border border-cyan-500/30 
                               hover:border-cyan-400/50 transition-all duration-500 hover:shadow-[0_0_20px_#22d3ee40] 

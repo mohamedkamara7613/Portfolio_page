@@ -14,19 +14,54 @@ export default function ContactSection({ contacts }) {
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Titre style terminal */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <div className="font-mono text-4xl font-bold mb-4">
-            <span className="text-cyan-400">$ </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-              contact_me
-            </span>
-            <span className="text-green-400 animate-pulse">_</span>
-          </div>
-        </motion.div>
+  initial={{ opacity: 0, y: -30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-center mb-16"
+>
+  <div className="flex flex-col items-center space-y-6">
+    {/* Photo de profil avec effets cyber */}
+    <motion.div
+      initial={{ scale: 0, rotate: -180 }}
+      whileInView={{ scale: 1, rotate: 0 }}
+      transition={{ duration: 1, type: "spring" }}
+      className="relative group/avatar"
+    >
+      <img
+        src="assets/profile2.png"
+        alt="Mouhamed"
+        className="w-24 h-24 rounded-full border-2 border-cyan-400/60 object-cover shadow-[0_0_30px_#22d3ee60] relative z-10"
+      />
+      {/* Effet de halo pulsant */}
+      <div className="absolute inset-0 rounded-full bg-cyan-400/20 animate-ping opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-1000" />
+      {/* Points de connexion */}
+      <div className="absolute -top-1 -left-1 w-4 h-4 rounded-full bg-cyan-400 drop-shadow-[0_0_10px_#22d3ee] opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300" />
+      <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-purple-400 drop-shadow-[0_0_10px_#c084fc] opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300" />
+    </motion.div>
+
+    {/* Texte terminal */}
+    <div className="font-mono text-4xl font-bold">
+      <span className="text-cyan-400">$ </span>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+        contact_me
+      </span>
+      <span className="text-green-400 animate-pulse">_</span>
+    </div>
+
+    {/* Sous-titre avec nom */}
+    <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.8 }}
+      className="text-gray-400 font-mono text-lg flex items-center space-x-2"
+    >
+      <span className="text-cyan-400">//</span>
+      <span>Hey, je suis</span>
+      <span className="text-cyan-400 font-bold">Mouhamed</span>
+      <span>- Développeur passionné</span>
+    </motion.p>
+  </div>
+</motion.div>
 
         {/* Grille des contacts */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
