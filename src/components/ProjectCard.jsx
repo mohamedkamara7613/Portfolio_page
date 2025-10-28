@@ -69,42 +69,86 @@ export default function ProjectCard({ id, title, description, media, technologie
       )}
 
       {/* Contrôles de navigation si plusieurs médias */}
-      {media.length > 1 && (
-        <>
-          <button
-            onClick={prevMedia}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-900/80 hover:bg-cyan-400/80 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-20"
-          >
-            ‹
-          </button>
-          <button
-            onClick={nextMedia}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-900/80 hover:bg-cyan-400/80 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-20"
-          >
-            ›
-          </button>
-          
-          {/* Indicateur de position */}
-          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 z-20">
-            {media.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentMediaIndex(idx)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  idx === currentMediaIndex 
-                    ? 'bg-cyan-400 scale-125' 
-                    : 'bg-gray-500 hover:bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
+{media.length > 1 && (
+  <>
+    {/* Bouton précédent */}
+    <button
+      onClick={prevMedia}
+      className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-gray-900/90 hover:bg-cyan-400/90 text-cyan-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-20 border border-cyan-400/50 hover:border-cyan-400 shadow-[0_0_15px_#22d3ee40] hover:shadow-[0_0_20px_#22d3ee] backdrop-blur-sm"
+    >
+      <motion.svg
+        whileHover={{ x: -2 }}
+        className="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+      </motion.svg>
+    </button>
 
-          {/* Compteur */}
-          <div className="absolute top-2 right-2 bg-gray-900/80 text-cyan-400 text-xs px-2 py-1 rounded-full font-mono z-20">
-            {currentMediaIndex + 1}/{media.length}
+    {/* Bouton suivant */}
+    <button
+      onClick={nextMedia}
+      className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-gray-900/90 hover:bg-cyan-400/90 text-cyan-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-20 border border-cyan-400/50 hover:border-cyan-400 shadow-[0_0_15px_#22d3ee40] hover:shadow-[0_0_20px_#22d3ee] backdrop-blur-sm"
+    >
+      <motion.svg
+        whileHover={{ x: 2 }}
+        className="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </motion.svg>
+    </button>
+    
+    {/* Indicateur de position - Style terminal */}
+    <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20 bg-gray-900/80 backdrop-blur-sm rounded-full px-3 py-2 border border-cyan-400/30">
+      {media.map((_, idx) => (
+        <button
+          key={idx}
+          onClick={() => setCurrentMediaIndex(idx)}
+          className={`w-2 h-2 rounded-full transition-all duration-300 relative ${
+            idx === currentMediaIndex 
+              ? 'bg-cyan-400 scale-125 shadow-[0_0_10px_#22d3ee]' 
+              : 'bg-gray-500 hover:bg-cyan-300 hover:scale-110'
+          }`}
+        >
+          {/* Tooltip au hover */}
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-cyan-400 text-xs px-2 py-1 rounded border border-cyan-400/30 opacity-0 hover:opacity-100 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+            {media[idx].type === "video" ? `Video ${idx + 1}` : `Image ${idx + 1}`}
           </div>
-        </>
+        </button>
+      ))}
+    </div>
+
+    {/* Compteur - Style interface cyber */}
+    <div className="absolute top-3 right-3 bg-gray-900/80 backdrop-blur-sm text-cyan-400 text-xs px-3 py-1.5 rounded-full font-mono z-20 border border-cyan-400/30 shadow-[0_0_10px_#22d3ee20]">
+      <span className="text-green-400">{currentMediaIndex + 1}</span>
+      <span className="text-gray-400 mx-1">/</span>
+      <span className="text-purple-400">{media.length}</span>
+      <span className="text-gray-500 ml-1">
+        {currentMedia.type === "video" ? "(vid)" : "(img)"}
+      </span>
+    </div>
+
+    {/* Indicateur de type de média */}
+    <div className="absolute top-3 left-3 bg-gray-900/80 backdrop-blur-sm text-xs px-2 py-1 rounded font-mono z-20 border border-cyan-400/30">
+      {currentMedia.type === "video" ? (
+        <span className="text-red-400 flex items-center">
+          <span className="w-1.5 h-1.5 bg-red-400 rounded-full mr-1.5 animate-pulse" />
+          VIDEO
+        </span>
+      ) : (
+        <span className="text-green-400 flex items-center">
+          <span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-1.5" />
+          IMAGE
+        </span>
       )}
+    </div>
+  </>
+)}
     </div>
 
       {/* Titre avec style terminal */}

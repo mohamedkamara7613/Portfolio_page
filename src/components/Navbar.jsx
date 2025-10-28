@@ -47,6 +47,8 @@ const Navbar = ({ projects, contacts }) => {
       links: projects.map(project => ({
         label: project.title,
         onClick: () => {
+          console.log('Scrolling to:', project.id); // ← Debug
+    console.log('All project IDs:', projects.map(p => p.id)); // ← Debug
           scroller.scrollTo(project.id, { smooth: true, duration: 600, offset: -80 });
           setIsMenuOpen(false);
         }

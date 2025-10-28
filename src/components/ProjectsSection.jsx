@@ -73,7 +73,7 @@ export default function ProjectsSection({ projects }) {
   className="flex flex-col gap-16"
 >
   {filteredProjects.map((project, index) => (
-    <Element key={project.id} name={`project-${project.id}`}>
+    <Element key={project.id} name={project.id}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 30 },
